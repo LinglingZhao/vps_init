@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#下载shadowsocks
+yum install python-setuptools && easy_install pip
+pip install shadowsocks
+
+
+wget -c https://github.com/LinglingZhao/vps_init/shadowscoks.json
+sudo chmod 755 shadowscoks.json
+sudo mv shadowscoks.json /etc/shadowscoks.json
+
+nohup sslocal -c /etc/shadowsocks.json /dev/null 2>&1 &
+echo " nohup sslocal -c /etc/shadowsocks.json /dev/null 2>&1 &" /etc/rc.local
+
