@@ -1,0 +1,3 @@
+wget -c https://github.com/LinglingZhao/vps_init/blob/master/shadowsocks.init
+sudo chmod 755 shadowsocks.init
+./shadowsocks.init
