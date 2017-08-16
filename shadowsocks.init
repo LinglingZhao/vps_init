@@ -3,6 +3,14 @@
 yum install python-setuptools && easy_install pip
 pip install shadowsocks
 
+#打开firewall
+systemctl start firewalld
+#添加8388端口 
+firewall-cmd --zone=public --add-port=8388/tcp --permanent
+#重新载入 可能要等一段时间才会生效
+firewall-cmd --reload
+#查看所有打开的端口
+firewall-cmd --zone=public --list-ports
 #下载shadowsocks.json
 wget -c https://github.com/LinglingZhao/vps_init/shadowscoks.json
 sudo mv shadowscoks.json /etc/shadowscoks.json
