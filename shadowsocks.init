@@ -15,8 +15,11 @@ firewall-cmd --zone=public --list-ports
 wget -c https://github.com/LinglingZhao/vps_init/shadowscoks.json
 sudo mv shadowscoks.json /etc/shadowscoks.json
 
+ssserver -c /etc/shadowsocks.json -d start
+ssserver -c /etc/shadowsocks.json -d stop
+
 #后台启动
-nohup sslocal -c /etc/shadowsocks.json /dev/null 2>&1 &
+nohup sslocal -c /etc/shadowsocks.ps json /dev/null 2>&1 &
 
 #开机自启动
 echo " nohup sslocal -c /etc/shadowsocks.json /dev/null 2>&1 &" /etc/rc.local
